@@ -23,8 +23,8 @@ are on mac/linux.
 Just make sure you are in a workspace before you do anything in a shared account. You don't want to step on any ones' toes,
 or worse take down prod.
 
-Also note that for learning purposes all files are included, but in a production environment you should gitignore sensitive
-files like .tfvars, backend.tf, and your .terraform folder.
+Also note that for learning purposes all files/folders are included (except for .terraform directory), but in a production environment you should gitignore sensitive
+files like .pem, .tfvars, and backend.tf.
 
 * Step 1. Install terraform with your favorite installer (we recommend homebrew)
 
@@ -81,7 +81,7 @@ files. For more information read the [docs](https://www.terraform.io/docs/backen
 so that you don't interfere with other users' resources.
 
 ```sh
-terraform workspace select <YOUR_WORKSPACE_NAME>
+terraform workspace new <YOUR_WORKSPACE_NAME>
 ```
 
 At this point you should be able to run any of the examples and watch terraform do its thing. To do this, simply cd into
