@@ -5,7 +5,7 @@ variable vpc_id {
 
 variable public_subnets {
   type        = "list"
-  description = "The public subnet ID corresponding to the private subnet you'll be installing vault ui into. Again, we make no assumptions. This should be large enough to support your cluster."
+  description = "The public subnet ID corresponding to the private subnet you'll be installing the lb and instances into. Again, we make no assumptions. This should be large enough to support your cluster."
 }
 
 variable private_subnets {

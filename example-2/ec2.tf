@@ -2,11 +2,11 @@
 resource "aws_instance" "example_2_instance" {
   count = "${var.instance_count}"
 
+  ami = "${data.aws_ami.aws_linux.id}"
+  instance_type = "${var.instance_type}"
+
   // We're doing some magic here to allow for any number of count that's evenly distributed
   // across the configured subnets.
-  ami = "${data.aws_ami.aws_linux.id}"
-
-  instance_type = "${var.instance_type}"
   subnet_id     = "${var.private_subnets[count.index % length(var.private_subnets)]}"
 
   key_name = "${var.pem_key}"
