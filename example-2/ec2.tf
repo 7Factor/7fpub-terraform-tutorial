@@ -1,5 +1,5 @@
 // create the instance(s)
-resource "aws_instance" "example_2" {
+resource "aws_instance" "example_2_instance" {
   count = "${var.instance_count}"
 
   // We're doing some magic here to allow for any number of count that's evenly distributed

@@ -40,7 +40,7 @@ data "aws_ami" "ec2_linux" {
 }
 
 // configure our ec2 instance
-resource "aws_instance" "ec2_instance" {
+resource "aws_instance" "example_1_instance" {
   ami             = "${data.aws_ami.ec2_linux.id}"
   instance_type   = "t2.micro"
   subnet_id       = "${var.subnet_id}"
@@ -81,5 +81,5 @@ resource "aws_security_group" "ssh_sg" {
 
 // print an output to make ssh'ing easier
 output "example_1_ip" {
-  value = "${aws_instance.ec2_instance.public_ip}"
+  value = "${aws_instance.example_1_instance.public_ip}"
 }

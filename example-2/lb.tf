@@ -29,7 +29,7 @@ resource "aws_lb_target_group" "example_2_lb_target" {
 resource "aws_lb_target_group_attachment" "example_2_lb_target_attachments" {
   count            = "${var.instance_count}"
   target_group_arn = "${aws_lb_target_group.example_2_lb_target.arn}"
-  target_id        = "${element(aws_instance.example_2.*.id, count.index)}"
+  target_id        = "${element(aws_instance.example_2_instance.*.id, count.index)}"
   port             = 80
 }
 
