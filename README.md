@@ -74,7 +74,7 @@ terraform init
 ```
 
 Note this step is dependant on your backend.tf file, which comes with this repo. Normally this file is not source controlled
-as it contains sensitive information. This file specifies and s3 bucket to use as a backend for storing your terraform state
+as it contains sensitive information. This file specifies an s3 bucket to use as a backend for storing your terraform state
 files. For more information read the [docs](https://www.terraform.io/docs/backends/)
 
 * Step 8. Select your terraform workspace. This is similar to switching to a different git branch. This step is important

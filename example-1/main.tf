@@ -1,6 +1,11 @@
 // A simple ec2 instance
 // The resources should be broken up into logically named files, but it's nice to see everything in one place when learning
 
+// Required terraform version
+terraform {
+  required_version = ">=0.10.7"
+}
+
 // declare some variables
 variable "subnet_id" {
   description = "The id of the subnet to place your instance in."
@@ -49,9 +54,9 @@ resource "aws_instance" "ec2_instance" {
 
 // an sg to allow ssh access from anywhere
 resource "aws_security_group" "ssh_sg" {
-  name = "example_1_sg"
+  name        = "example_1_sg"
   description = "allow ssh from anywhere"
-  vpc_id = "${var.vpc_id}"
+  vpc_id      = "${var.vpc_id}"
 
   // inbound on ssh port 22
   ingress {
@@ -63,10 +68,10 @@ resource "aws_security_group" "ssh_sg" {
 
   // allow all outbound traffic
   egress {
-    from_port       = 0
-    to_port         = 0
-    protocol        = "-1"
-    cidr_blocks     = ["0.0.0.0/0"]
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   tags {
