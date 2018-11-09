@@ -78,3 +78,8 @@ resource "aws_security_group" "ssh_sg" {
     Name = "Example One"
   }
 }
+
+// print an output to make ssh'ing easier
+output "example_1_ip" {
+  value = "${aws_instance.ec2_instance.public_ip}"
+}
