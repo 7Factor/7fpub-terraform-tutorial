@@ -12,7 +12,7 @@ data "aws_ami" "aws_linux" {
 
   filter {
     name   = "name"
-    values = ["amzn2-ami-*-x86_64-gp2"]
+    values = ["amzn-ami-*-x86_64-gp2"]
   }
 
   filter {
@@ -24,4 +24,6 @@ data "aws_ami" "aws_linux" {
     name   = "owner-alias"
     values = ["amazon"]
   }
+
+  owners = ["137112412989"]
 }

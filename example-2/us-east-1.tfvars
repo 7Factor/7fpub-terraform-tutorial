@@ -1,13 +1,13 @@
 // A reminder that a file like this should never be but into source control
 
 // our vpc id, this was created by our network terraform
-vpc_id = "vpc-0a2b4071"
+vpc_id = "vpc-0e6ce80c5861c0584"
 // public subnets for the load balancer
-public_subnets = ["subnet-0443e8abf3640567b", "subnet-0f8fab4961bf568d4"]
+public_subnets = ["subnet-0620394bc9b89c2fe", "subnet-035d2af47fb873744"]
 // privat subnets for the ec2"s
-private_subnets = ["subnet-00dab7576351ed8bd","subnet-0619a20a7806d1e7d"]
+private_subnets = ["subnet-082ac19a5e55f8736","subnet-0830c1406c1904fa4"]
 // we want to be able to ssh into our ec2's
-utility_accessible_sg = "sg-0ab93a49e6ab42173"
+utility_accessible_sg = "sg-08b1317753b3557ba"
 // this was created manually through the console.
 pem_key = "tutorial-key-us-east-1"
 // it's a good idea to get into the habit of tagging like this
