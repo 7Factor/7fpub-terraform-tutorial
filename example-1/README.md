@@ -19,13 +19,13 @@ terraform apply -var-file=us-east-1.tfvars
 Clean up after yourself:
 
 ```sh
-tf destroy
+terraform destroy
 ```
 
 With tfvars file:
 
 ```sh
-tf destroy -var-file=us-east-1.tfvars
+terraform destroy -var-file=us-east-1.tfvars
 ```
 
 ## How it works
@@ -42,5 +42,3 @@ on which parameters are required or optional, and what they do.
 These items work hand in hand to give you variable control over your
 configurations. You can think of terraform variables as how you declare
 variables, and tfvars as a way to assign values to those values.
-
-

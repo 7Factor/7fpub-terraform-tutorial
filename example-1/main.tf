@@ -37,6 +37,8 @@ data "aws_ami" "ec2_linux" {
     name   = "owner-alias"
     values = ["amazon"]
   }
+
+  owners = ["137112412989"]
 }
 
 // configure our ec2 instance
