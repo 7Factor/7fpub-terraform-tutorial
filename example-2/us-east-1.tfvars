@@ -7,7 +7,7 @@ private_subnets = ["subnet-082ac19a5e55f8736","subnet-0830c1406c1904fa4"]
 // ssh in ec2's from utility host
 utility_accessible_sg = "sg-0e7348f1fe06d0d6b"
 // this was created manually through the console.
-pem_key = "example-2-us-east-1.pem"
+pem_key = "example-2-us-east-1"
 // it's a good idea to get into the habit of tagging like this
 cluster_name = "Example 2 Cluster"
 
