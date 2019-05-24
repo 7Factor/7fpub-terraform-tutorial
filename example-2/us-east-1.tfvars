@@ -1,5 +1,3 @@
-// A reminder that a file like this should never be but into source control
-
 // our vpc id, this was created by our network terraform
 vpc_id = "vpc-0e6ce80c5861c0584"
 // public subnets for the load balancer
