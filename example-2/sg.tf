@@ -21,7 +21,7 @@ resource "aws_security_group" "example_2_sg" {
 
   tags {
     Cluster = "${var.cluster_name}"
-    Name    = "Vault Boxes"
+    Name    = "Example 2 Boxes"
   }
 }
 
@@ -48,6 +48,6 @@ resource "aws_security_group" "example_2_lb_sg" {
 
   tags {
     Cluster = "${var.cluster_name}"
-    Name    = "Vault Load Balancer"
+    Name    = "Example 2 LB"
   }
 }
