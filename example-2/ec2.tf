@@ -26,7 +26,7 @@ resource "aws_instance" "example_2_instance" {
       "sudo service docker start",
       "sudo usermod -aG docker ec2-user",
       "sudo docker pull nginx",
-      "sudo docker run -d --name example-2 -p 80:80 -v html:/usr/share/nginx/html nginx:latest",
+      "sudo docker run -d --name example-2 -p 80:80 -v /html:/usr/share/nginx/html nginx",
     ]
 
     connection {

@@ -10,4 +10,3 @@ utility_accessible_sg = "sg-0e7348f1fe06d0d6b"
 pem_key = "example-2-us-east-1"
 // it's a good idea to get into the habit of tagging like this
 cluster_name = "Example 2 Cluster"
-
