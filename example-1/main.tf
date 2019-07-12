@@ -3,7 +3,7 @@
 
 // Required terraform version
 terraform {
-  required_version = ">=0.10.7"
+  required_version = ">=0.12.3"
 }
 
 // declare some variables
@@ -43,13 +43,13 @@ data "aws_ami" "ec2_linux" {
 
 // configure our ec2 instance
 resource "aws_instance" "example_1_instance" {
-  ami             = "${data.aws_ami.ec2_linux.id}"
+  ami             = data.aws_ami.ec2_linux.id
   instance_type   = "t2.micro"
-  subnet_id       = "${var.subnet_id}"
-  key_name        = "${var.pem_key}"
-  security_groups = ["${aws_security_group.ssh_sg.id}"]
+  subnet_id       = var.subnet_id
+  key_name        = var.pem_key
+  security_groups = [aws_security_group.ssh_sg.id]
 
-  tags {
+  tags = {
     Name = "Example One Instance"
   }
 }
@@ -58,7 +58,7 @@ resource "aws_instance" "example_1_instance" {
 resource "aws_security_group" "ssh_sg" {
   name        = "example_1_sg"
   description = "allow ssh from anywhere"
-  vpc_id      = "${var.vpc_id}"
+  vpc_id      = var.vpc_id
 
   // inbound on ssh port 22
   ingress {
@@ -76,12 +76,12 @@ resource "aws_security_group" "ssh_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags {
+  tags = {
     Name = "Example One"
   }
 }
 
 // print an output to make ssh'ing easier
 output "example_1_ip" {
-  value = "${aws_instance.example_1_instance.public_ip}"
+  value = aws_instance.example_1_instance.public_ip
 }
